@@ -19,7 +19,3 @@
 
 *A website that I ueually listen to music when I'm studying* is [study music](https://youtu.be/3lZYvVRCWO0?si=IOjsMmeOptB5Ut4D) 
 
-<!-- Part B -->
-https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg?semt=ais_rp_progressive&w=740&q=80 
-
-This meme contains an image of a cat in the centre with the text "NO STRESS" at the top and "JUST VIBING" at the bottom. The background colour is light brown and the cat is wearing sunglasses.
