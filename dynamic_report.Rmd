@@ -1,0 +1,80 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+## Analysis of Advertisements on Instagram
+This report explores advertisements on Instagram based on survey responses. The analysis focuses on the relationship between interest, ad clicked and the type of advertisement.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{r}
+library(tidyverse)
+
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTE1J98O8BrYPSwBP05_gRVywh-FguKoaHmzcLaglIsa6jpjU16WRb7Xe3b06hVYsCaluDLx4S6AhtR/pub?output=csv"
+
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTE1J98O8BrYPSwBP05_gRVywh-FguKoaHmzcLaglIsa6jpjU16WRb7Xe3b06hVYsCaluDLx4S6AhtR/pub?output=csv")
+
+latest_data <- logged_data %>%
+  rename(ad_type = 'What type of advertisement did you see?',
+         seconds = 'How many seconds did you watch the advertisement?',
+         clicked = 'Did you click on the advertisement?',
+         interest = 'How interesting did you find the advertisement? ( 1 = least interesting, 5 = most interesting)',
+         frequency = 'How often have you seen similar advertisements today?')
+
+# summary values
+max(latest_data$seconds)
+mean(latest_data$interest)
+
+# bar charts
+
+# bar charts for ad_type 
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = ad_type),
+           fill = "#B3F0FF") +
+  labs(title = "types of adversitements",
+       subtitle = "What kind of advertisements are on Instagram",
+       caption = "Source: responses from the survey",
+       x = "Ad type",
+       y = "Count")
+
+
+# bar charts for clicked and interest 
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(y = interest, fill = clicked)) +
+  labs(title = "More interest, more clicked?",
+       subtitle = "Comparing interest and clicked for advertisemts on Instagram",
+       caption = "Source: responses from the survey",
+       x = "Interest (1 = least, 4 = most)",
+       y = "Ad clicked")
+```
+
+* The maximum veiwing time on Instagram advertisements is `r max(latest_data$seconds)` seconds.
+
+* The average interest level of the advertisements on Instagram is `r mean(latest_data$interest)`.
+
+```{css}
+body {font-family: Arial;}
+
+h2 {color: #0006A1;
+    font_weight: bold;
+    font-style: italic;}
+```
+
+## What's going on with this data?
+
+You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
+
+```{r}
+pets <- c("cat", "dog", "turtle", "rabbit")
+best_pet <- pets[1]
+
+```
+
+The best pet to have is a `r best_pet` of course!
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
