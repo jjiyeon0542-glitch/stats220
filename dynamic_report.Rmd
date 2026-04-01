@@ -9,6 +9,7 @@ This report explores advertisements on Instagram based on survey responses. The 
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
 
 ```
+## What's going on with this data?
 
 ```{r}
 library(tidyverse)
@@ -65,16 +66,4 @@ h2 {color: #0006A1;
     font-style: italic;}
 ```
 
-## What's going on with this data?
-
-You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
-
-```{r}
-pets <- c("cat", "dog", "turtle", "rabbit")
-best_pet <- pets[1]
-
-```
-
-The best pet to have is a `r best_pet` of course!
-
-![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
+![](https://media1.tenor.com/m/TsTpg7ggfZsAAAAC/laugh-dog.gif)
